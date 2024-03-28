@@ -103,3 +103,9 @@ docker build -t tp-docker .
 ```
 
 ![img_9.png](img_9.png)
+
+#### 3. Quelles différences voyez-vous entre les deux méthodes ?
+
+Le volume va être réactif, si on modifie dans le pc, cela se répercute directement dans le container alors qu'avec un copy non.
+
+
