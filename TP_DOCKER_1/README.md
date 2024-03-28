@@ -120,11 +120,18 @@ docker pull phpmyadmin/phpmyadmin
 ![img_10.png](img_10.png)
 ![img_11.png](img_11.png)
 
-#### 2. Exécuter 2 containers à partir des images
+#### 2.1. Exécuter 2 containers à partir des images
 
 ```bash
-docker run --name tp-mysql -e MYSQL_ROOT_PASSWORD=root -d mysql
-docker run --name tp-phpmyadmin -d --link tp-mysql:db -p 8081:80 phpmyadmin/phpmyadmin
+docker network create tp-mysql-network
+docker run --name tp-mysql --network tp-mysql-network -e MYSQL_ROOT_PASSWORD=root -d mysql
+docker run --name tp-phpmyadmin -d --network tp-mysql-network -p 8081:80 phpmyadmin/phpmyadmin
 ```
 
 ![img_12.png](img_12.png)
+
+#### 2.2. Se connecter à phpmyadmin via l'adresse `http://localhost:8081` avec les identifiants suivants :
+
+- Utilisateur : `root`
+- Mot de passe : `root`
+![img_13.png](img_13.png)
