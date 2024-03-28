@@ -139,3 +139,50 @@ docker run --name tp-phpmyadmin -d --network=tp-mysql-network -e PMA_HOST=tp-mys
 #### 3. Créer une base de données nommée `test` et une table `user` : 
 
 ![img_14.png](img_14.png)
+
+### Utiliser docker-compose
+
+#### 1. Décrire à quoi sert la commande `docker-compose` vs `docker run`
+
+`docker-compose` permet de lancer plusieurs containers en même temps, de les lier entre eux et de les configurer. `docker run` permet de lancer un seul container.
+
+#### 2.1. Quelle commande permet de lancer tous les containers décrits dans le fichier `docker-compose.yml` ?
+
+```bash
+docker-compose up
+```
+
+#### 2.2. Quelle commande permet de stopper tous les containers décrits dans le fichier `docker-compose.yml` ?
+
+```bash
+docker-compose down
+```
+
+#### 3. Créer un fichier `docker-compose.yml` pour servir la base de données mysql et phpmyadmin
+
+```yml
+version: '3.1'
+
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - tp-mysql-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+    ports:
+      - "8081:80"
+    networks:
+      - tp-mysql-network
+
+networks:
+    tp-mysql-network:
+        driver: bridge
+```
