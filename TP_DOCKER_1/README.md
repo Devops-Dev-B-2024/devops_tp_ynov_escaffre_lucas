@@ -83,3 +83,23 @@ cat /usr/share/nginx/html/index.html
 ```
 
 ![img_7.png](img_7.png)
+
+
+### Builder une image docker
+
+#### 1. Créer un fichier Dockerfile contenant le code suivant pour créer une image qui permet d'éxecuter un serveur web :
+
+```Dockerfile
+FROM nginx:latest
+COPY ./html/index.html /usr/share/nginx/html/index.html
+```
+
+![img_8.png](img_8.png)
+
+#### 2. Créer une image de manière à servir ./html/index.html
+
+```bash
+docker build -t tp-docker .
+```
+
+![img_9.png](img_9.png)
