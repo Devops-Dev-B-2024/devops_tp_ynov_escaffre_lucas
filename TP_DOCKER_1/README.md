@@ -24,7 +24,7 @@ docker images
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>TP Docker</title>
 </head>
@@ -34,10 +34,12 @@ docker images
 </html>
 ```
 
+![img_2.png](img_2.png)
+
 #### 4. Démarrer un nouveau container et servir la page html créée précédemment
 
 ```bash
-docker run --name tp-docker -d -p 8080:80 -v ./index.html:/usr/share/nginx/html/index.html nginx
+docker run --name tp-docker -d -p 8080:80 -v ./html/index.html:/usr/share/nginx/html/index.html nginx
 ```
 
 #### 5. Supprimer le container
@@ -51,5 +53,5 @@ docker rm -f tp-docker
 
 ```bash
 docker run --name tp-docker -d -p 8080:80 nginx
-docker cp index.html tp-docker:/usr/share/nginx/html/index.html
+docker cp ./html/index.html tp-docker:/usr/share/nginx/html/index.html
 ```
