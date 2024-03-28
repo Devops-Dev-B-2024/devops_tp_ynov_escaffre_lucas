@@ -39,7 +39,7 @@ docker images
 #### 4.1. Démarrer un nouveau container et servir la page html créée précédemment
 
 ```bash
-cd TP_DOCKER_1
+cd TP_DOCKER_2
 docker run --name tp-docker -d -p 8080:80 -v ./html/index.html:/usr/share/nginx/html/index.html nginx
 ```
 
