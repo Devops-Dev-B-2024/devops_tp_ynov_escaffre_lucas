@@ -109,3 +109,13 @@ docker build -t tp-docker .
 Le volume va être réactif, si on modifie dans le pc, cela se répercute directement dans le container alors qu'avec un copy non.
 
 
+### Utiliser une base de données dans un container docker
+
+#### 1. Récupérer l'image mysql et phpmyadmin/phpmyadmin depuis le docker hub
+
+```bash
+docker pull mysql
+docker pull phpmyadmin/phpmyadmin
+```
+![img_10.png](img_10.png)
+![img_11.png](img_11.png)
