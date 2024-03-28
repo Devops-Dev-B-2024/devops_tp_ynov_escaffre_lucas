@@ -36,11 +36,18 @@ docker images
 
 ![img_2.png](img_2.png)
 
-#### 4. Démarrer un nouveau container et servir la page html créée précédemment
+#### 4.1. Démarrer un nouveau container et servir la page html créée précédemment
 
 ```bash
+cd TP_DOCKER_1
 docker run --name tp-docker -d -p 8080:80 -v ./html/index.html:/usr/share/nginx/html/index.html nginx
 ```
+
+![img_3.png](img_3.png)
+
+#### 4.2. Ouvrir un navigateur et accéder à l'adresse `http://localhost:8080`
+
+![img_4.png](img_4.png)
 
 #### 5. Supprimer le container
 
