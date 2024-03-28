@@ -10,6 +10,8 @@
 docker pull nginx
 ```
 
+<img src="./img.png" alt="">
+
 #### 2. Lancer une commande pour vérifier que l'image a bien été téléchargée
 
 ```bash
