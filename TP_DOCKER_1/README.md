@@ -119,3 +119,12 @@ docker pull phpmyadmin/phpmyadmin
 ```
 ![img_10.png](img_10.png)
 ![img_11.png](img_11.png)
+
+#### 2. Exécuter 2 containers à partir des images
+
+```bash
+docker run --name tp-mysql -e MYSQL_ROOT_PASSWORD=root -d mysql
+docker run --name tp-phpmyadmin -d --link tp-mysql:db -p 8081:80 phpmyadmin/phpmyadmin
+```
+
+![img_12.png](img_12.png)
