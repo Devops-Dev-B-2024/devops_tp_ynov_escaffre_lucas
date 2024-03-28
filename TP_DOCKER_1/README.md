@@ -10,13 +10,15 @@
 docker pull nginx
 ```
 
-<img src="./img.png" alt="">
+![img.png](img.png)
 
 #### 2. Lancer une commande pour vérifier que l'image a bien été téléchargée
 
 ```bash
 docker images
 ```
+
+![img_1.png](img_1.png)
 
 #### 3. Créer un fichier dans le répertoire local .html/ nommé `index.html` contenant le code suivant :
 
