@@ -51,10 +51,21 @@ docker run --name tp-docker -d -p 8080:80 -v ./html/index.html:/usr/share/nginx/
 
 #### 5. Supprimer le container
 
+Avec le nom du container :
 ```bash
 docker stop tp-docker
-docker rm -f tp-docker
+docker rm tp-docker
 ```
+
+Avec l'id du container :
+```bash
+docker ps -a
+docker stop <container_id>
+docker rm <container_id>
+```
+
+On peut voir que le container a bien été stoppé puis supprimé
+![img_5.png](img_5.png)
 
 #### 6. Relancer le même container sans l'option -v puis utiliser la commande "cp" pour servir votre fichier (docker cp ARGS)
 
@@ -62,3 +73,13 @@ docker rm -f tp-docker
 docker run --name tp-docker -d -p 8080:80 nginx
 docker cp ./html/index.html tp-docker:/usr/share/nginx/html/index.html
 ```
+
+![img_6.png](img_6.png)
+
+Pour vérifier que cela a fonctionné : 
+```bash
+docker exec -it tp-docker bash
+cat /usr/share/nginx/html/index.html
+```
+
+![img_7.png](img_7.png)
