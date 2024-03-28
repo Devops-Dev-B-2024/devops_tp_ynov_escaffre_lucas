@@ -124,8 +124,8 @@ docker pull phpmyadmin/phpmyadmin
 
 ```bash
 docker network create tp-mysql-network
-docker run --name tp-mysql --network tp-mysql-network -e MYSQL_ROOT_PASSWORD=root -d mysql
-docker run --name tp-phpmyadmin -d --network tp-mysql-network -p 8081:80 phpmyadmin/phpmyadmin
+docker run --name tp-mysql -d --network=tp-mysql-network -e MYSQL_ROOT_PASSWORD=root mysql
+docker run --name tp-phpmyadmin -d --network=tp-mysql-network -e PMA_HOST=tp-mysql -p 8081:80 phpmyadmin/phpmyadmin
 ```
 
 ![img_12.png](img_12.png)
@@ -135,3 +135,7 @@ docker run --name tp-phpmyadmin -d --network tp-mysql-network -p 8081:80 phpmyad
 - Utilisateur : `root`
 - Mot de passe : `root`
 ![img_13.png](img_13.png)
+
+#### 3. Créer une base de données nommée `test` et une table `user` : 
+
+![img_14.png](img_14.png)
