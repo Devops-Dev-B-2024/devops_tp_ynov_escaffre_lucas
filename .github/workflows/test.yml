@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 14.x
 
-      - run: cd TP_DOCKER_3 && npm ci
+      - run: cd TP_DOCKER_3 && npm install
 
       - run: cd TP_DOCKER_3 && npm run build
 
