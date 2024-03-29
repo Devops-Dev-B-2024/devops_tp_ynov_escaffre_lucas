@@ -34,6 +34,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Log in to Snyk
+        run: npx snyk auth ${{ secrets.SNYK_TOKEN }}
+
       - name: Run Snyk
         run: npx snyk container test tp-docker-3
 
