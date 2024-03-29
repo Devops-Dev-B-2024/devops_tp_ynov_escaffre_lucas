@@ -25,9 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.JS 14.x
+      - name: Use Node.JS 20.x
         uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 20.x
 
       - run: cd TP_DOCKER_3 && npm install && npm run lint
