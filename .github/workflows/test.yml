@@ -38,6 +38,7 @@ jobs:
         uses: docker/scout-action@v1
         with:
           image: tp-docker-3
+          github_token: ${{ secrets.TOKEN }}
 
   lint:
     runs-on: ubuntu-latest
