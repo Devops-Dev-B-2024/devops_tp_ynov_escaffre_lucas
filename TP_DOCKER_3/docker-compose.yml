@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - tp-mysql-network
+    environment:
+      DATABASE_URL: mysql://root:root@db/tp-docker
+    depends_on:
+      - db
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tp-docker
+    networks:
+      - tp-mysql-network
+
+networks:
+  tp-mysql-network:
+    driver: bridge
