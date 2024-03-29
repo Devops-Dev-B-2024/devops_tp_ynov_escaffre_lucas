@@ -21,6 +21,9 @@ module.exports = {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+    "ignorePatterns": [
+        "*.test.js",
+    ],
     "rules": {
     }
 }
