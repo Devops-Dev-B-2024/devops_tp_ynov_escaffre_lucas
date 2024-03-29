@@ -31,3 +31,14 @@ jobs:
           node-version: 20.x
 
       - run: cd TP_DOCKER_3 && npm install && npm run lint
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run Jest
+        uses: stefanoeb/jest-action@1.0.3
+        with:
+          jestArgs: ../../TP_DOCKER_3/sum.test.js
