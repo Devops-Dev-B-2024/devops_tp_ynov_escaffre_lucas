@@ -33,8 +33,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Run Snyk
-        run: npx snyk test
+        run: npx snyk container test tp-docker-3
 
   lint:
     runs-on: ubuntu-latest
