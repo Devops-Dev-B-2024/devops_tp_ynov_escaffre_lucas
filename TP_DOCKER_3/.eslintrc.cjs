@@ -23,6 +23,7 @@ module.exports = {
     },
     "ignorePatterns": [
         "*.test.js",
+        "sum.js",
     ],
     "rules": {
     }
