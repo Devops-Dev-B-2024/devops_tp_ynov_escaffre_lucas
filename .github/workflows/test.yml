@@ -16,15 +16,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Use Node.JS 20.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 20.x
-
-      - run: cd TP_DOCKER_3 && npm install
-
-      - run: cd TP_DOCKER_3 && npm run docker
+      - name: Build image
+        run: cd TP_DOCKER_3 && docker build -t tp-docker-3 .
 
   lint:
     runs-on: ubuntu-latest
